@@ -5,4 +5,7 @@ b = 1
 fib = a + b
 
 while fib < MAX:
-    tmp
+    a = b
+    b = fib
+    fib = a + b
+
