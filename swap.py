@@ -7,7 +7,7 @@ import os
 # sudo apt install beep
 
 SWAP_NUM = 1
-WARNING = 3
+WARNING = 5
 
 swap_min = int(input("Enter minimum swap-time (seconds): "))
 swap_max = int(input("Enter maximum swap-time (seconds): "))
