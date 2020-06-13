@@ -12,7 +12,7 @@ WARNING = 3
 swap_min = int(input("Enter minimum swap-time (seconds): "))
 swap_max = int(input("Enter maximum swap-time (seconds): "))
 seed = input("Enter a random word: ")
-random.seed(seed) 
+random.seed(seed)
 num_players = int(input("Enter the number of players: "))
 player_id = int(input("Enter your player id (0-" + str(num_players - 1) + "): "))
 input("Press enter at the same time: ")
@@ -50,8 +50,3 @@ while True:
 		time.sleep(1)
 	swap(SWAP_NUM)
 	SWAP_NUM += 1
-
-
-
-
-
