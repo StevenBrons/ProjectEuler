@@ -36,6 +36,7 @@ init()
 def swap(swap_num):
 	print("SWAP #" + str(swap_num) + " is occuring!")
 	notify("Press enter to push:")
+	input()
 	run_cmd("git add -A")
 	run_cmd("git commit -m \"swap_\"" + str(swap_num))
 	run_cmd("git push")
