@@ -43,7 +43,6 @@ while True:
 	time.sleep(random.uniform(swap_min, swap_max))
 	for i in range(1,WARNING + 1):
 		print(str(WARNING - i) + "s UNTIL SWAP")
-		run_cmd("beep")
 		time.sleep(1)
 	swap(SWAP_NUM)
 	SWAP_NUM += 1
