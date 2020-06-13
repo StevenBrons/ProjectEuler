@@ -17,8 +17,8 @@ num_players = int(input("Enter the number of players: "))
 player_id = int(input("Enter your player id (0-" + str(num_players - 1) + "): "))
 input("Press enter at the same time: ")
 
-def notify(text):
-	run_cmd("notify-send -u low '{}'".format(text))
+def notifiy(text):
+	run_cmd("notify-send -t 3000 -u critical '{}' ''".format(text))
 	print(text)
 
 
@@ -30,26 +30,25 @@ def init():
 		run_cmd("git checkout -B room_" + str(i))
 		run_cmd("git push --set-upstream origin room_" + str(i))
 	run_cmd("git checkout -B room_" + str(player_id))
-	notify("Start coding")
 
 init()
 
 def swap(swap_num):
 	print("SWAP #" + str(swap_num) + " is occuring!")
-	notify("Press enter to push")
+	run_cmd("Press enter to push:")
 	run_cmd("git add -A")
 	run_cmd("git commit -m \"swap_\"" + str(swap_num))
 	run_cmd("git push")
 	run_cmd("git checkout room_" + str((swap_num + player_id) % num_players))
-	notify("Press enter to pull")
+	notifiy("Press enter to pull:")
 	run_cmd("git pull")
-	notify("Start coding")
+	notifiy("Start coding")
 
 
 
 while True:
 	time.sleep(random.uniform(swap_min, swap_max))
-	notify("{} seconds left stop coding".format(WARNING))
+	notifiy("{} seconds left, stop coding!".format(WARNING))
 	for i in range(1,WARNING + 1):
 		print(str(WARNING - i) + "s UNTIL SWAP")
 		time.sleep(1)
