@@ -1,3 +1,6 @@
-MAX = 1000
+sums = 0
+for i in range(1,1000):
+    if i % 3 == 0 or i % 5 == 0:
+        sums += i
 
-[3 * x for x in range(0, MAX / 3)]
+print(sums)
