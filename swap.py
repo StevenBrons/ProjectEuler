@@ -18,7 +18,7 @@ player_id = int(input("Enter your player id (0-" + str(num_players - 1) + "): ")
 input("Press enter at the same time: ")
 
 def notifiy(text):
-	run_cmd("notify-send -t 3000 -u critical {}".format(text))
+	run_cmd("notify-send -t 3000 -u critical '{}' ''".format(text))
 	print(text)
 
 
