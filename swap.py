@@ -35,14 +35,12 @@ init()
 
 def swap(swap_num):
 	print("SWAP #" + str(swap_num) + " is occuring!")
-	notify("Press enter to push:")
-	input()
+	input("Press enter to push:")
 	run_cmd("git add -A")
 	run_cmd("git commit -m \"swap_\"" + str(swap_num))
 	run_cmd("git push")
 	run_cmd("git checkout room_" + str((swap_num + player_id) % num_players))
-	notify("Press enter to pull:")
-	input()
+	input("Press enter to pull:")
 	run_cmd("git pull")
 	notify("Start coding")
 
@@ -51,7 +49,7 @@ def swap(swap_num):
 while True:
 	time.sleep(random.uniform(swap_min, swap_max))
 	notify("{} seconds left, stop coding!".format(WARNING))
-	for i in range(1,WARNING + 1):
+	for i in range(0,WARNING):
 		print(str(WARNING - i) + "s UNTIL SWAP")
 		time.sleep(1)
 	swap(SWAP_NUM)
