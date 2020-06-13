@@ -18,7 +18,7 @@ player_id = int(input("Enter your player id (0-" + str(num_players - 1) + "): ")
 input("Press enter at the same time: ")
 
 def notify(text):
-	run_cmd("notify-send -t 3000 -u critical '{}' ''".format(text))
+	os.system("notify-send '{}' ''".format(text))
 	print(text)
 
 
@@ -42,6 +42,7 @@ def swap(swap_num):
 	run_cmd("git push")
 	run_cmd("git checkout room_" + str((swap_num + player_id) % num_players))
 	notify("Press enter to pull:")
+	input()
 	run_cmd("git pull")
 	notify("Start coding")
 
